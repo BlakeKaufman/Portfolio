@@ -30,7 +30,7 @@ navContainer.forEach(function (nav) {
         .getBoundingClientRect();
       window.scrollTo({
         left: s1Cordinates.left + window.pageXOffset,
-        top: s1Cordinates.top + window.pageYOffset,
+        top: s1Cordinates.top + window.pageYOffset - 60,
         behavior: "smooth",
       });
     }

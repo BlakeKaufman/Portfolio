@@ -103,3 +103,12 @@ projectsHedingOBS.observe(projectsTextContainer);
 projectsHedingOBS.observe(project1);
 projectsHedingOBS.observe(project2);
 projectsHedingOBS.observe(project3);
+
+// link to minigolf page depending on if you are on mobile or computer
+const minigolf = document.querySelector(".minogolfLink");
+
+if (window.innerWidth < 480) {
+  minigolf.href = "google.com";
+} else {
+  minigolf.href = "google2.com";
+}
