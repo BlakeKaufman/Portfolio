@@ -108,7 +108,7 @@ projectsHedingOBS.observe(project3);
 const minigolf = document.querySelector(".minogolfLink");
 
 if (window.innerWidth < 480) {
-  minigolf.href = "google.com";
+  minigolf.href = "http://rdgolftest.epizy.com/";
 } else {
-  minigolf.href = "google2.com";
+  minigolf.href = "https://blakekaufman.github.io/minigolfdesktop/";
 }
