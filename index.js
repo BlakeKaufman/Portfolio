@@ -124,3 +124,45 @@ exit.addEventListener("click", function (e) {
     popup.style.display = "none";
   }, 1000);
 });
+
+// button hover effects
+const buttons = document.querySelectorAll(".btnHover");
+
+function hoverEvent(bool, button) {
+  if (bool) {
+    if (button.classList.contains("LearnAboutMeBtn")) {
+      button.style.backgroundColor = "white";
+      button.style.color = "black";
+      button.style.borderColor = "black";
+    } else {
+      button.style.backgroundColor = "white";
+      button.style.color = "black";
+      button.style.cursor = "pointer";
+    }
+  } else {
+    if (button.classList.contains("LearnAboutMeBtn")) {
+      button.style.backgroundColor = "unset";
+      button.style.color = "white";
+      button.style.borderColor = "white";
+    } else {
+      button.style.backgroundColor = "unset";
+      button.style.color = "black";
+    }
+  }
+}
+
+function checkMobile() {
+  if (window.innerWidth < 480) return;
+  buttons.forEach((button) =>
+    button.addEventListener("mouseover", function (e) {
+      hoverEvent(true, button);
+    })
+  );
+
+  buttons.forEach((button) =>
+    button.addEventListener("mouseout", function (e) {
+      hoverEvent(false, button);
+    })
+  );
+}
+checkMobile();
