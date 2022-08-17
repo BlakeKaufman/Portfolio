@@ -108,51 +108,46 @@ const minigolf = document.querySelector(".minogolfLink");
 const popup = document.querySelector(".popup");
 const exit = document.querySelector(".exit");
 
-if (window.innerWidth < 480) {
-  minigolf.href = "https://rdgolftest.epizy.com/";
-} else {
-  minigolf.addEventListener("click", function (e) {
-    e.preventDefault();
-    popup.style.animation = "displayError 1s";
-    popup.style.display = "flex";
-  });
-}
-exit.addEventListener("click", function (e) {
-  e.preventDefault();
-  popup.style.animation = "removeError 1s";
-  setTimeout(function () {
-    popup.style.display = "none";
-  }, 1000);
-});
-
 // button hover effects
 const buttons = document.querySelectorAll(".btnHover");
 
 function hoverEvent(bool, button) {
   if (bool) {
-    if (button.classList.contains("LearnAboutMeBtn")) {
+    if (
+      button.classList.contains("LearnAboutMeBtn") ||
+      button.classList.contains("exit")
+    ) {
       button.style.backgroundColor = "white";
       button.style.color = "black";
       button.style.borderColor = "black";
+      button.style.cursor = "pointer";
     } else {
       button.style.backgroundColor = "white";
       button.style.color = "black";
       button.style.cursor = "pointer";
     }
   } else {
-    if (button.classList.contains("LearnAboutMeBtn")) {
+    if (
+      button.classList.contains("LearnAboutMeBtn") ||
+      button.classList.contains("exit")
+    ) {
       button.style.backgroundColor = "unset";
       button.style.color = "white";
       button.style.borderColor = "white";
+      button.style.cursor = "pointer";
     } else {
       button.style.backgroundColor = "unset";
       button.style.color = "black";
+      button.style.cursor = "pointer";
     }
   }
 }
 
 function checkMobile() {
-  if (window.innerWidth < 480) return;
+  if (window.innerWidth < 480) {
+    minigolf.href = "https://rdgolftest.epizy.com/";
+    return;
+  }
   buttons.forEach((button) =>
     button.addEventListener("mouseover", function (e) {
       hoverEvent(true, button);
@@ -164,5 +159,18 @@ function checkMobile() {
       hoverEvent(false, button);
     })
   );
+
+  minigolf.addEventListener("click", function (e) {
+    e.preventDefault();
+    popup.style.animation = "displayError 1s";
+    popup.style.display = "flex";
+  });
+  exit.addEventListener("click", function (e) {
+    e.preventDefault();
+    popup.style.animation = "removeError 1s";
+    setTimeout(function () {
+      popup.style.display = "none";
+    }, 1000);
+  });
 }
 checkMobile();
