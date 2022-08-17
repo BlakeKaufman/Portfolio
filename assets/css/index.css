@@ -35,6 +35,7 @@
   text-decoration: none;
   color: black;
   border: 2px solid black;
+  animation: zoomIn 2s;
 }
 /* nav bar start */
 
@@ -394,96 +395,41 @@ nav ul li a:hover {
   width: 100%;
   height: fit-content;
   margin: 0 auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 2px solid black;
-  padding: 20px;
-}
-/* left side start */
-#contant-me .left {
-  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: left;
-  padding: 20px;
+  justify-content: center;
+  border-top: 2px solid black;
+  padding: max(calc((5 * 100vh) / 100), 50px);
 }
-#contant-me .left .contactHeader {
+/* left side start */
+#contant-me .contactHeader {
   font-size: 25px;
   margin-bottom: max(calc((5 * 100vh) / 100), 50px);
 }
-#contant-me .left .contactQuesion {
-  width: 100%;
+#contant-me .contactQuesion {
   font-size: 30px;
   margin-bottom: max(calc((3 * 100vh) / 100), 25px);
   text-align: left;
 }
-#contant-me .left .contactCTA {
-  width: 100%;
+#contant-me .contactCTA {
   font-size: 18px;
   margin-bottom: max(calc((3 * 100vh) / 100), 25px);
   text-align: left;
 }
 
 /* left side end */
-/* right side start */
-#contant-me .right {
-  width: 50%;
-}
-#contant-me .right .inputContainer {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: max(calc((5 * 100vh) / 100), 20px);
-}
-#contant-me .right label {
-  margin-bottom: 10px;
-}
-.inputStyle {
-  width: 100%;
-  background: unset;
-  border: 2px solid black;
-  border-radius: 5px;
-  font-size: 20px;
-  text-align: left;
-  padding: 10px;
-}
-.inputStyle::placeholder {
-  font-size: 20px;
-  text-align: left;
-}
-#contant-me .right .submitEmail {
-  background: unset;
-  border: 2px solid black;
-  border-radius: 5px;
-  font-size: 20px;
-  text-align: left;
-  padding: 10px;
-  transition: 0.5s;
-}
-#contant-me .right .submitEmail:hover {
-  background: white;
-  color: black;
-}
 @media screen and (max-width: 880px) {
   #contant-me {
     flex-direction: column;
   }
-  #contant-me .left {
-    width: 100%;
-  }
-  #contant-me .right {
-    width: 100%;
-  }
-  #contant-me .left .contactQuesion {
+  #contant-me .contactQuesion {
     text-align: center;
   }
-  #contant-me .left .contactCTA {
+  #contant-me .contactCTA {
     text-align: center;
   }
-  #contant-me .left .contactEmail {
+  #contant-me .contactEmail {
     text-align: center;
   }
 }
@@ -530,6 +476,16 @@ footer .copyright {
 /* ///////////////////////////////////////// */
 /* Mobile styling */
 @media screen and (max-width: 480px) {
+  /* global styles */
+  .btnHover {
+    background-color: white;
+    border-color: black;
+    color: black;
+  }
+  .content .LearnAboutMeBtn {
+    color: black;
+    border-color: black;
+  }
   /* home section */
   .content a {
     font-size: 7vw;
@@ -568,6 +524,7 @@ footer .copyright {
   padding: 20px;
   border: 1px solid white;
   border-radius: 10px;
+  color: white;
 }
 .QrCode {
   width: auto;
