@@ -96,8 +96,7 @@ function moveHeader(entries) {
 
 const projectsHedingOBS = new IntersectionObserver(moveHeader, {
   root: null,
-  threshold: 0.1,
-  rootMargin: "100px",
+  threshold: 0,
 });
 projectsHedingOBS.observe(projectsTextContainer);
 projectsHedingOBS.observe(project1);
@@ -106,9 +105,22 @@ projectsHedingOBS.observe(project3);
 
 // link to minigolf page depending on if you are on mobile or computer
 const minigolf = document.querySelector(".minogolfLink");
+const popup = document.querySelector(".popup");
+const exit = document.querySelector(".exit");
 
 if (window.innerWidth < 480) {
   minigolf.href = "https://rdgolftest.epizy.com/";
 } else {
-  minigolf.href = "https://blakekaufman.github.io/minigolfdesktop/";
+  minigolf.addEventListener("click", function (e) {
+    e.preventDefault();
+    popup.style.animation = "displayError 1s";
+    popup.style.display = "flex";
+  });
 }
+exit.addEventListener("click", function (e) {
+  e.preventDefault();
+  popup.style.animation = "removeError 1s";
+  setTimeout(function () {
+    popup.style.display = "none";
+  }, 1000);
+});
