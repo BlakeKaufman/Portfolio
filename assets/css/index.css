@@ -27,8 +27,9 @@
 
 nav {
   width: 100%;
+  height: 60px;
   position: fixed;
-  display: block;
+  display: flex;
   top: 0;
   left: 0;
   padding: 15px;
@@ -182,7 +183,7 @@ nav ul li a:hover {
   animation-iteration-count: 1;
   position: relative;
 }
-.content a {
+.content .LearnAboutMeBtn {
   padding: 1vw;
   text-decoration: none;
   color: white;
@@ -193,7 +194,7 @@ nav ul li a:hover {
   border: 2px solid white;
   border-radius: 5px;
 }
-.content a:hover {
+.content .LearnAboutMeBtn:hover {
   background-color: white;
   color: black;
   border: 2px solid black;
@@ -341,7 +342,7 @@ nav ul li a:hover {
   transition: 0.5s;
 }
 #projects .projectContainer .projectTitle {
-  font-size: 25px;
+  font-size: 30px;
   text-align: left;
   color: #361e98;
   text-decoration: underline;
@@ -352,18 +353,18 @@ nav ul li a:hover {
   margin: 0 auto max(calc((2 * 100vh) / 100), 30px);
 }
 #projects .firstProject {
-  margin-top: max(calc((20 * 100vh) / 100), 300px);
+  margin-top: max(calc((15 * 100vh) / 100), 250px);
   margin-left: min(20px, 2vw);
   transform: translateY(100px);
 }
 #projects .secondProject {
   margin-right: min(20px, 2vw);
   transform: translateY(100px);
-  margin: max(calc((20 * 100vh) / 100), 300px) min(20px, 2vw) 0 auto;
+  margin: max(calc((15 * 100vh) / 100), 250px) min(20px, 2vw) 0 auto;
 }
 #projects .thirdProject {
   margin-left: min(20px, 2vw);
-  margin-top: max(calc((20 * 100vh) / 100), 300px);
+  margin-top: max(calc((15 * 100vh) / 100), 250px);
   transform: translateY(100px);
 }
 #projects .secondProject .projectTitle {
@@ -394,7 +395,7 @@ nav ul li a:hover {
     width: 95%;
   }
   #projects .projectLink {
-    font-size: 16px;
+    font-size: 20px;
   }
 }
 /* projects end  */
@@ -559,6 +560,45 @@ footer .copyright {
     width: 95%;
   }
   /* about me section end  */
+  /* projects section start */
+  #projects .projectLink:hover {
+    display: none;
+  }
+  /* projects section end */
+  .disabled {
+    background-color: none; /* <----------- */
+  }
+}
+/* ///////////////////////////////////////// */
+/* popup */
+.popup {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  background-color: black;
+  color: white;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-y: scroll;
+}
+.h1-popup {
+  font-size: min(25px, 7vw);
+  margin-bottom: 20px;
+}
+.exit {
+  margin-top: 20px;
+  font-size: min(18px, 3vw);
+  padding: 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+.QrCode {
+  width: auto;
+  height: 30%;
 }
 /* ///////////////////////////////////////// */
 /* Animations */
@@ -635,5 +675,22 @@ footer .copyright {
   }
   to {
     background-image: linear-gradient(120deg, black 100%, transparent 0%);
+  }
+}
+
+@keyframes displayError {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+@keyframes removeError {
+  from {
+    height: 100%;
+  }
+  to {
+    height: 0;
   }
 }
