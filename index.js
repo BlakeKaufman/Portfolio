@@ -42,7 +42,7 @@ typeWritter();
 // About me section load in late
 
 const paragraph = document.querySelector(".parText");
-const aboutH1 = document.querySelector(".h1-style");
+const aboutH1 = document.querySelector(".whoIam");
 const first = document.querySelector(".first");
 const second = document.querySelector(".second");
 const third = document.querySelector(".third");
@@ -60,10 +60,10 @@ function pText(entries) {
   const [entry] = entries;
   if (!entry.isIntersecting) return;
 
-  first.style.animation = "left 4s";
-  second.style.animation = "left 5s";
-  third.style.animation = "left 6s";
-  fourth.style.animation = "left 7s";
+  first.style.animation = "right 3s";
+  second.style.animation = "right 4s";
+  third.style.animation = "right 5s";
+  fourth.style.animation = "right 6s";
   paragraphObs.unobserve(paragraph);
 }
 const unBlurObs = new IntersectionObserver(unBlur, {
@@ -90,7 +90,7 @@ function moveHeader(entries) {
   if (!entry.isIntersecting) return;
 
   entry.target.style.transform = "translateY(0px)";
-  entry.target.style.transition = "all 0.5s";
+  entry.target.style.transition = "all 0.8s";
   projectsHedingOBS.unobserve(entry.target);
 }
 
