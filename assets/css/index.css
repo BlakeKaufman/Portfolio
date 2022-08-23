@@ -450,6 +450,20 @@ nav ul li a:hover {
 }
 /* projects end  */
 /* ///////////////////////////////////////// */
+/* mobile view start */
+/* ///////////////////////////////////////// */
+#mobile-view {
+  margin-top: max(10vh, 100px);
+  border-top: 2px solid black;
+  padding-top: max(10vh, 50px);
+}
+@media screen and (max-width: 740px) {
+  #mobile-view {
+    display: none;
+  }
+}
+/* mobile view end */
+/* ///////////////////////////////////////// */
 /* contact me  */
 #contant-me {
   width: 100%;
@@ -498,13 +512,14 @@ nav ul li a:hover {
 /* footer start */
 footer {
   width: 100%;
-  height: max(calc(50 * 100vh) / 100, 400px);
+  height: fit-content;
   background-color: black;
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
+  padding-bottom: 20px;
 }
 footer .nav {
   width: 100%;
@@ -530,8 +545,20 @@ footer .nav ul li a {
 footer .nav ul li a:hover {
   color: #f8d2df;
 }
+.footerIcon {
+  margin: 20px 0 10px;
+}
 footer .copyright {
   width: 90%;
+}
+@media screen and (max-width: 700px) {
+  footer .nav ul {
+    flex-direction: column;
+    padding: unset;
+  }
+  footer .nav ul li {
+    margin: 20px;
+  }
 }
 @media screen and (max-width: 600px) {
   footer .nav ul {

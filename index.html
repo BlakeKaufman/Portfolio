@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/index.css" />
     <link rel="stylesheet" href="./assets/css/colors.css" />
+    <link rel="stylesheet" href="./assets/css/Iphone.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Allura&display=swap"
       rel="stylesheet"
@@ -37,6 +38,9 @@
           </li>
           <li class="margin-l">
             <a class="navLink" href="#projects">Projects</a>
+          </li>
+          <li class="margin-l">
+            <a class="navLink" href="#mobile-view">View Mobile</a>
           </li>
           <li class="margin-l">
             <a class="navLink" href="#contant-me">Contact</a>
@@ -112,7 +116,7 @@
       <section id="aboutMe">
         <!-- left image start  -->
         <div class="left">
-          <img src="./images/282881_1142 2.JPG" alt="A picture of me" />
+          <img src="./images/282881_1142-2.webp" alt="A picture of me" />
         </div>
         <!-- left image end  -->
         <div class="right">
@@ -201,6 +205,95 @@
         </div>
       </section>
       <!-- Projects End -->
+      <!-- view on mobile start -->
+      <section id="mobile-view">
+        <span class="h1-style header">Mobile Viewing Screen</span>
+        <div class="iphoneContent">
+          <section class="iphone">
+            <div class="topnotchContainer">
+              <div class="topnotch">
+                <div class="bar"></div>
+                <div class="camera"></div>
+              </div>
+              <div class="time"></div>
+              <img
+                src="./images/personalModeIcon.svg"
+                class="personalModeIcon"
+                alt="Apple personal do not disturb mode icon"
+                srcset=""
+              />
+              <img
+                src="./images/cellServiceIcon.svg"
+                class="cellServiceIcon"
+                alt="cell cervice apple icon"
+              />
+              <img
+                src="./images/wifiIcon.svg"
+                class="WifiIcon"
+                alt="wifi apple icon"
+              />
+              <img
+                src="./images/batteryIcon.svg"
+                class="batteryIcon"
+                alt="battery icon"
+                srcset=""
+              />
+            </div>
+            <div class="iframeContainer">
+              <iframe
+                class="iframe"
+                src="https://blakekaufman.github.io/mibourbon/index.html"
+              ></iframe>
+            </div>
+            <div class="bottomSearch">
+              <div class="search">
+                <div class="side"></div>
+                <div class="searchbar">
+                  <div class="text">
+                    <span class="smallA">A</span>
+                    <span>A</span>
+                  </div>
+                  <span class="link">blakekaufman.github.io</span>
+                  <span class="refreshIcon">↻</span>
+                </div>
+                <div class="side-r side"></div>
+              </div>
+              <!-- search end -->
+              <div class="navigation">
+                <img src="./images/leftArrow.svg" alt="left arrow apple icon" />
+                <img
+                  src="./images/rightArrow.svg"
+                  alt="right arrow apple icon"
+                  srcset=""
+                />
+                <img
+                  src="./images/shareIcon.svg"
+                  alt="share apple icon"
+                  srcset=""
+                />
+                <img src="./images/bookmarks.svg" alt="bookmarks apple icon" />
+                <img src="./images/pages.svg" alt="pages apple icon" />
+              </div>
+            </div>
+            <div class="swipeUpBar"></div>
+          </section>
+          <div class="mobileOptions">
+            <span
+              class="h1-style active option"
+              id="MiBourbonOption"
+              data-link="https://blakekaufman.github.io/mibourbon"
+              >MiBourbon</span
+            >
+            <span
+              class="h1-style option"
+              id="BookmarkOption"
+              data-link="https://blakekaufman.github.io/BookmarkProject/"
+              >Bookmark</span
+            >
+          </div>
+        </div>
+      </section>
+      <!-- view on mobile end -->
       <!-- Contact Start -->
       <section id="contant-me">
         <span class="contactHeader h1-style">Contact</span>
@@ -226,13 +319,16 @@
               <a class="navLink" href="#projects">Projects</a>
             </li>
             <li>
+              <a class="navLink" href="#mobile-view">View Mobile</a>
+            </li>
+            <li>
               <a class="navLink" href="#contant-me">Contact</a>
             </li>
           </ul>
         </div>
         <a href="https://github.com/BlakeKaufman" target="_blank"
           ><img
-            class="icon"
+            class="icon footerIcon"
             src="./images/githubWhite.svg"
             alt="Github logo that will take  you to my github page"
         /></a>
@@ -257,6 +353,7 @@
     <script src="./nav.js"></script>
     <script src="./timer.js"></script>
     <script src="./mouseGradient.js"></script>
+    <script src="./mobilePhone.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>
