@@ -91,3 +91,22 @@ movileMenu.addEventListener("click", function (e) {
     toggleMobileNav();
   }
 });
+const content =
+  '\n<li class="veiwMobile margin-l">\n  <a class="navLink" href="#mobile-view">\n    View Mobile\n  </a>\n</li>';
+// removing view Mobile on mobile menu
+function setViewMovileMenu() {
+  if (window.innerWidth < 700) {
+    document.querySelectorAll(".veiwMobile").forEach((element) => {
+      element.remove();
+    });
+  }
+}
+setViewMovileMenu();
+
+// making the mobile nav diapreer on window resize
+window.addEventListener("resize", function (e) {
+  console.log(window.innerWidth > 700 && movileMenu.style.display === "block");
+  if (window.innerWidth > 700 && movileMenu.style.display === "block") {
+    movileMenu.style.display = "none";
+  }
+});
